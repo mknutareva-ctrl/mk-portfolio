@@ -1,0 +1,117 @@
+:root {
+  --bg: #fefefd;
+  --ink: #070d1d;
+  --placeholder: #b1b0ae;
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-ui: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 72px;
+}
+.logo { display: block; flex-shrink: 0; }
+.logo img { display: block; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-block: 8px;
+}
+.nav-item,
+.lang {
+  font: 500 16px/1.5 var(--font-ui);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-item:hover { text-decoration: underline; text-underline-offset: 6px; }
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  gap: 24px;
+  padding: 72px;
+}
+.hero-text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+.hero-sub {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.hero-media {
+  flex: 0 0 526px;
+  min-height: 320px;
+  background: var(--placeholder);
+}
+
+.cta { display: flex; flex-wrap: wrap; gap: 16px; }
+.btn {
+  padding: 16px 24px;
+  font: 500 16px/1.5 var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid var(--ink);
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-secondary { color: var(--ink); }
+.btn:hover { opacity: 0.85; }
+
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* Tablet / mobile (макетів немає — проста адаптація) */
+@media (max-width: 1100px) {
+  .header, .hero { padding-inline: 32px; }
+  .nav { gap: 24px; }
+  .hero { flex-direction: column; }
+  .hero-media { flex-basis: auto; min-height: 280px; }
+  h1 { font-size: 44px; }
+}
+@media (max-width: 720px) {
+  .header { flex-direction: column; align-items: flex-start; padding-inline: 16px; }
+  .nav { flex-wrap: wrap; gap: 8px 20px; }
+  .hero { padding: 40px 16px; }
+  h1 { font-size: 34px; }
+  .hero-sub { font-size: 18px; }
+}
