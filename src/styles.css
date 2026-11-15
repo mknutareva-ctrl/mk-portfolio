@@ -4,6 +4,9 @@
   --placeholder: #b1b0ae;
   --font-display: "Montserrat", system-ui, sans-serif;
   --font-ui: "Inter", system-ui, sans-serif;
+  --content-width: 1296px;
+  /* бічні відступи: мінімум 72px, а на широких екранах контент центрується в 1296px */
+  --gutter: max(72px, calc((100% - var(--content-width)) / 2));
 }
 
 * { box-sizing: border-box; }
@@ -21,7 +24,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 16px 72px;
+  padding: 16px var(--gutter);
 }
 .burger { display: none; }
 .logo { display: block; flex-shrink: 0; }
@@ -57,7 +60,7 @@ body {
 .hero {
   display: flex;
   gap: 24px;
-  padding: 72px;
+  padding: 72px var(--gutter);
 }
 .hero-text {
   flex: 1 1 0;
